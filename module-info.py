@@ -19,11 +19,12 @@ def find_subpackages(base_dir, parent_package):
 def generate_module_info(module_name, subpackages):
     lines = [
         f"module {module_name} {{",
+        "    requires transitive javafx.graphics;",
         "    requires javafx.controls;",
         "    requires javafx.fxml;",
-        "    requires javafx.graphics;",
         "",
         f"    opens {module_name} to javafx.fxml;",
+        "",
         f"    exports {module_name};",
         "",
     ]
