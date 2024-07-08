@@ -3,14 +3,157 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/Home.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.HomeController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../media/bg/home-bg.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="716.0" onMouseClicked="#handleSettingButton" pickOnBounds="true" preserveRatio="true" styleClass="setting-btn" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+         <image>
+            <Image url="@../media/icons/setting.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="180.0" layoutX="780.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../media/icons/diamond.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="180.0" layoutX="978.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../media/icons/star.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_diamonds" fill="WHITE" layoutX="857.0" layoutY="54.78515625" strokeType="OUTSIDE" strokeWidth="0.0" text="4545" textAlignment="CENTER" wrappingWidth="120.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_stars" fill="WHITE" layoutX="1047.0" layoutY="55.78515625" strokeType="OUTSIDE" strokeWidth="0.0" text="4545" textAlignment="CENTER" wrappingWidth="120.0" AnchorPane.topAnchor="31.0">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="1066.0" layoutY="686.0" pickOnBounds="true" styleClass="shop-btn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <image>
+            <Image url="@../media/icons/shop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="60.0" layoutX="769.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/flag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="64.0" layoutX="577.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" rotate="-31.3">
+         <image>
+            <Image url="@../media/icons/line1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="84.0" layoutX="699.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/line2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="60.0" layoutX="500.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/flag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="43.0" layoutX="432.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" rotate="-24.0">
+         <image>
+            <Image url="@../media/icons/line3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="60.0" layoutX="377.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/flag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="60.0" layoutX="658.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/flag.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="372.0" layoutY="198.0" spacing="5.0">
+         <children>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/unfill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/unfill-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="495.0" layoutY="282.0" spacing="5.0">
+         <children>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/unfill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/unfill-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="653.0" layoutY="327.0" spacing="5.0">
+         <children>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/unfill-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="765.0" layoutY="451.0" spacing="5.0">
+         <children>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icons/fill-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

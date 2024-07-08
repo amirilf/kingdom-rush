@@ -1,6 +1,5 @@
 target/
 .idea/
 .vscode/
-media/
 
 **/media/test/

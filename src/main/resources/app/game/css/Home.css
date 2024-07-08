@@ -1,0 +1,9 @@
+.setting-btn:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+.shop-btn:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
