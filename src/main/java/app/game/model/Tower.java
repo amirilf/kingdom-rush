@@ -4,10 +4,12 @@ public abstract class Tower {
 
     private int destruction;
     private int construction;
+    private Point position;
 
-    Tower(int destruction, int construction) {
+    Tower(int destruction, int construction, Point point) {
         this.destruction = destruction;
         this.construction = construction;
+        this.position = point;
     }
 
     // GETTERS
@@ -19,6 +21,10 @@ public abstract class Tower {
         return construction;
     }
 
+    public Point getPosition() {
+        return position;
+    }
+
     // SETTERS
     public void setDestruction(int destruction) {
         this.destruction = destruction;
@@ -26,5 +32,9 @@ public abstract class Tower {
 
     public void setConstruction(int construction) {
         this.construction = construction;
+    }
+
+    public void setPosition(Point position) {
+        this.position = position;
     }
 }
