@@ -1,0 +1,30 @@
+.lbl {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10px;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-alignment: center;
+}
+
+.btn-submit {
+    -fx-font-family: 'Dyuthi Regular';
+    -fx-font-size: 17px;
+    -fx-text-fill: white;
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10px;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.btn-submit:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-border-color: #1c6cb2;
+}
+
+.btn-submit:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.7); 
+    -fx-border-color: #0e4a7d;
+}

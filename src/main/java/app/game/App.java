@@ -6,10 +6,10 @@ import app.game.model.DB;
 import app.game.model.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -19,19 +19,24 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage stage) throws IOException {
 
         // LOAD DATA
         loadData();
 
         // START APPLICATION
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Map.fxml"));
-        Pane root = loader.load();
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Kingdom rush");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/auth/Auth.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Kingdom rush");
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) {

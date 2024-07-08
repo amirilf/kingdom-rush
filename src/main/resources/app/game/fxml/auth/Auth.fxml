@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../css/auth/Auth.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.auth.Auth">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../media/bg/auth-bg.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="250.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kingdom rush" textAlignment="CENTER" wrappingWidth="699.7294921875" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="Dyuthi Regular" size="65.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <VBox layoutX="450.0" layoutY="402.0" spacing="20.0" AnchorPane.topAnchor="400.0">
+         <children>
+            <Label fx:id="lbl_login" alignment="CENTER" onMouseClicked="#handleLoginButton" prefHeight="50.0" prefWidth="300.0" styleClass="lbl" text="Login">
+               <font>
+                  <Font name="Dyuthi Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#handleRegisterButton" prefHeight="50.0" prefWidth="300.0" styleClass="lbl" text="Register">
+               <font>
+                  <Font name="Dyuthi Regular" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

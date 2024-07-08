@@ -1,0 +1,14 @@
+.lbl {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10px;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-alignment: center;
+}
+
+.lbl:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-cursor: hand;
+}
