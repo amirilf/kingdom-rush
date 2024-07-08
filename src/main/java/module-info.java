@@ -4,11 +4,19 @@ module app.game {
     requires javafx.fxml;
 
     opens app.game to javafx.fxml;
-    opens app.game.model to javafx.fxml;
-    opens app.game.gui.map to javafx.fxml;
 
     exports app.game;
+
+    opens app.game.model to javafx.fxml;
+
     exports app.game.model;
-    exports app.game.gui.map;
+
+    opens app.game.gui to javafx.fxml;
+
+    exports app.game.gui;
+
+    opens app.game.model.spell to javafx.fxml;
+
+    exports app.game.model.spell;
 
 }

@@ -7,15 +7,13 @@ import javafx.scene.shape.Path;
 
 public class Map {
 
-    private ArrayList<Tower> towers;
-    private ArrayList<Path> paths;
+    private ArrayList<Tower> towers = new ArrayList<>();
+    private ArrayList<Path> paths = new ArrayList<>();
     private int waves;
     private int coins;
     private ImageView bg;
 
-    Map(ArrayList<Tower> towers, ArrayList<Path> paths, int waves, int coins, ImageView bg) {
-        this.towers = towers;
-        this.paths = paths;
+    public Map(int waves, int coins, ImageView bg) {
         this.waves = waves;
         this.coins = coins;
         this.bg = bg;

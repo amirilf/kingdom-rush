@@ -27,6 +27,8 @@ public class Raider extends Thread {
 
     public Raider(Image image, Path path, int health, int speed, int loot) {
         this.imageView = new ImageView(image);
+        this.imageView.setFitHeight(50);
+        this.imageView.setFitWidth(50);
         this.path = path;
         this.health = health;
         this.isAlive = true;
@@ -36,7 +38,7 @@ public class Raider extends Thread {
 
     static {
         // load the "dead" image once for all heros
-        imageDead = new Image(Raider.class.getResourceAsStream("/app/game/media/test/dead.png"));
+        imageDead = new Image(Raider.class.getResourceAsStream("/app/game/media/test/2.png"));
     }
 
     // METHODS
@@ -69,7 +71,7 @@ public class Raider extends Thread {
                 e.printStackTrace();
             }
 
-            health -= new Random().nextInt(0, 30); // just random damage!
+            health -= new Random().nextInt(0, 10); // just random damage!
             if (health <= 0) {
                 die();
             }
