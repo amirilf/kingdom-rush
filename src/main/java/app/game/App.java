@@ -26,7 +26,7 @@ public class App extends Application {
 
         // START APPLICATION
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/auth/Auth.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Home.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
