@@ -10,16 +10,16 @@ import java.util.Random;
 
 import app.game.model.Raider;;
 
-public class Map1 {
+public class Map {
 
     @FXML
     private AnchorPane root;
 
     @FXML
-    private Path pathTop;
+    private Path path1;
 
     @FXML
-    private Path pathBottom;
+    private Path path2;
 
     @FXML
     public void initialize() {
@@ -33,7 +33,7 @@ public class Map1 {
                     int delay = new Random().nextInt(2000) + 1000;
                     Thread.sleep(delay);
 
-                    Path selectedPath = (new Random().nextBoolean()) ? pathTop : pathBottom;
+                    Path selectedPath = (new Random().nextBoolean()) ? path1 : path2;
                     Raider hero = new Raider(raiderImage, selectedPath, 100, 100, 100);
 
                     Platform.runLater(() -> {
