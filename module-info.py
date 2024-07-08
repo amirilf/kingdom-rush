@@ -1,6 +1,5 @@
 import os
 
-# Define the module name and the base directory for your packages
 module_name = "app.game"
 base_directory = "src/main/java/app/game"
 
