@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.Setting">
+   <children>
+      <ImageView fitHeight="853.0" fitWidth="1253.0" layoutX="-26.0" layoutY="-26.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/bg/setting-bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="318.0" layoutX="442.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/title.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="521.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+         <font>
+            <Font name="Dyuthi Regular" size="50.0" />
+         </font>
+      </Text>
+      <HBox layoutX="348.0" layoutY="217.0" spacing="25.0">
+         <children>
+            <VBox spacing="21.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER">
+                     <font>
+                        <Font name="Dyuthi Regular" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="CENTER">
+                     <font>
+                        <Font name="Dyuthi Regular" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER">
+                     <font>
+                        <Font name="Dyuthi Regular" size="40.0" />
+                     </font>
+                  </Text>
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="211.0" prefWidth="350.0" spacing="15.0">
+               <children>
+                  <TextField prefHeight="60.0" prefWidth="184.0" promptText="Name...">
+                     <font>
+                        <Font name="Dyuthi Regular" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField prefHeight="60.0" prefWidth="184.0" promptText="Username...">
+                     <font>
+                        <Font name="Dyuthi Regular" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField prefHeight="60.0" prefWidth="184.0" promptText="Password...">
+                     <font>
+                        <Font name="Dyuthi Regular" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button layoutX="531.0" layoutY="461.0" mnemonicParsing="false" text="Submit changes">
+         <font>
+            <Font name="Dyuthi Regular" size="18.0" />
+         </font>
+      </Button>
+      <Text layoutX="504.0" layoutY="682.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music :" textAlignment="CENTER">
+         <font>
+            <Font name="Dyuthi Regular" size="40.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="img_volume" fitHeight="60.0" fitWidth="65.0" layoutX="631.0" layoutY="643.0" onMouseClicked="#handleVolumeClicked" pickOnBounds="true">
+         <image>
+            <Image url="@../media/icons/volume-on.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
