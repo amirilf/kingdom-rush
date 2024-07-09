@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -44,10 +45,13 @@
             <Image url="@../media/icons/shop.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="769.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitWidth="60.0" layoutX="769.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="88.0" fitWidth="64.0" layoutX="577.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" rotate="-31.3">
          <image>
@@ -59,25 +63,34 @@
             <Image url="@../media/icons/line2.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="500.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitWidth="60.0" layoutX="500.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="88.0" fitWidth="43.0" layoutX="432.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" rotate="-24.0">
          <image>
             <Image url="@../media/icons/line3.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="377.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitWidth="60.0" layoutX="377.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="658.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitWidth="60.0" layoutX="658.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <HBox layoutX="372.0" layoutY="198.0" spacing="5.0">
          <children>
@@ -155,5 +168,15 @@
             </ImageView>
          </children>
       </HBox>
+      <ImageView fitHeight="50.0" fitWidth="320.0" layoutX="25.0" layoutY="22.0" pickOnBounds="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../media/icons/title.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="30.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test name for player" textAlignment="CENTER" wrappingWidth="320.0">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
