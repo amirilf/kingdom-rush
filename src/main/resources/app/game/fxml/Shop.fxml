@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.ShopController">
+   <children>
+      <ImageView fx:id="lbl_diamond" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/bg/shop-bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitWidth="80.0" layoutX="14.0" layoutY="713.0" onMouseClicked="#handleBackButton" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0">
+         <image>
+            <Image url="@../media/icons/back-btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="269.0" fitWidth="214.0" layoutX="698.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../media/icons/coin-shop-buy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="236.0" fitWidth="198.0" layoutX="237.0" layoutY="548.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/heart-shop-buy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="231.0" fitWidth="336.0" layoutX="388.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../media/icons/young-boy-shop-buy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="413.0" fitWidth="198.0" layoutX="744.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../media/icons/freeze-shop-buy.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="126.0" layoutY="211.0" spacing="20.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" rotate="-90.0">
+                     <image>
+                        <Image url="@../media/icons/coin-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl_coin" layoutX="10.0" layoutY="55.0" text="23" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/icons/freeze-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl_freeze" layoutX="10.0" layoutY="55.0" text="2" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" rotate="-90.0">
+                     <image>
+                        <Image url="@../media/icons/heart-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl_heart" layoutX="10.0" layoutY="55.0" text="65" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/icons/young-boy-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl_youngBoy" layoutX="10.0" layoutY="55.0" text="554" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+
+      <Polygon fill="transparent" layoutX="718.0" layoutY="603.0" onMouseClicked="#handleBuyCoin" points="212.0, 152.0, 225.0, 123.0, 166.0, 99.0, 158.0, 27.0, 121.0, -12.5535888671875, 55.0, -49.5535888671875, 9.0, -27.5535888671875, -11.0, -2.5535888671875, -26.0, 54.4464111328125, 9.0, 88.4464111328125, -1.0, 165.0, 166.0, 172.0, 166.0, 135.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Polygon>
+      <Polygon fill="transparent" layoutX="784.0" layoutY="296.0" onMouseClicked="#handleBuyFreeze" points="212.0, 224.4464111328125, 183.0, 230.4464111328125, 163.0, 199.4464111328125, 156.0, 143.4464111328125, 49.0, 178.4464111328125, 31.0, 209.4464111328125, -82.0, 172.4464111328125, -146.76470947265625, 172.4464111328125, -126.0, 199.4464111328125, 55.0, 249.4464111328125, 100.0, 300.4464111328125, 205.0, 331.4464111328125, 258.0, 273.4464111328125" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Polygon>
+      <Polygon fill="transparent" layoutX="461.0" layoutY="516.0" onMouseClicked="#handleBuyYoungBoy" points="166.0, 145.4464111328125, 186.0, 59.4464111328125, 166.0, -3.5535888671875, 111.0, -45.5535888671875, 55.0, -22.5535888671875, 16.0, 71.4464111328125, 48.0, 152.0, 9.0, 176.4464111328125, -3.0, 217.4464111328125, 55.0, 239.4464111328125, 55.0, 284.5535888671875, 179.0, 284.5535888671875, 204.5535888671875, 176.4464111328125" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Polygon>
+      <Polygon fill="transparent" layoutX="235.0" layoutY="497.0" onMouseClicked="#handleBuyHeart" points="186.0, 205.4464111328125, 174.0, 180.4464111328125, 174.0, 100.4464111328125, 143.0, 71.4464111328125, 100.0, 60.4464111328125, 61.0, 71.4464111328125, 33.0, 100.4464111328125, 33.0, 180.4464111328125, 22.0, 219.4464111328125, 48.0, 253.4464111328125, 69.0, 284.967041015625, 186.0, 271.4464111328125, 174.0, 227.4464111328125" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Polygon>
+      <Label layoutX="355.0" layoutY="26.0" prefHeight="70.0" prefWidth="140.0" text="999999" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi Regular" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_price" alignment="CENTER" layoutX="916.0" layoutY="89.0" prefHeight="51.0" prefWidth="80.0" text="999" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_title" layoutX="620.0" layoutY="86.0" prefHeight="37.0" prefWidth="231.0" text="Young Boy" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Label>
+      <TextFlow layoutX="620.0" layoutY="151.0" prefHeight="200.0" prefWidth="272.0">
+         <children>
+            <Text fx:id="txt_detail" fill="#8a8a8a" strokeType="OUTSIDE" strokeWidth="0.0" text="just a simple text for explaining the item which is selected by user to buy.">
+               <font>
+                  <Font name="Dyuthi Regular" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <ImageView fitHeight="77.0" fitWidth="208.0" layoutX="711.0" layoutY="311.0" onMouseClicked="#handleBuyButton" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/icons/title.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Text fill="WHITE" layoutX="794.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Text>
+
+   </children>
+</AnchorPane>

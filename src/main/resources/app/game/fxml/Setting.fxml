@@ -67,7 +67,7 @@
             <Image url="@../media/icons/volume-on.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="80.0" layoutX="56.0" layoutY="690.0" onMouseClicked="#handleBackButton" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" AnchorPane.leftAnchor="50.0">
+      <ImageView fitWidth="80.0" layoutX="56.0" layoutY="690.0" onMouseClicked="#handleBackButton" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0">
          <image>
             <Image url="@../media/icons/back-btn.png" />
          </image>
