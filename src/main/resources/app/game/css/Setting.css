@@ -1,0 +1,44 @@
+.back-btn:hover, .volume-btn:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #6F5124;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-text-fill: #6F5124;
+    -fx-font-size: 20px;
+    -fx-font-family: 'Dyuthi Regular';
+    -fx-highlight-fill: #C08D41;
+    -fx-highlight-text-fill: white;
+}
+
+.input-field:focused {
+    -fx-border-color: #956C2D; 
+    -fx-background-color: #F5F5DC;
+}
+
+.submit-btn {
+    -fx-background-color: linear-gradient(to bottom, #F3D19C, #E7B77A);
+    -fx-border-color: #6F5124; 
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Dyuthi Regular';
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.submit-btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #E7B77A, #C08D41);
+}
+
+.submit-btn:pressed {
+    -fx-background-color: #4D371D;
+    -fx-text-fill: white;
+}

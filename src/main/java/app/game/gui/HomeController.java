@@ -2,6 +2,7 @@ package app.game.gui;
 
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class HomeController {
 
@@ -18,6 +19,6 @@ public class HomeController {
 
     @FXML
     private void handleSettingButton() {
-        System.out.println("Setting page button!");
+        Utility.changeSceneofStage((Stage) txt_diamonds.getScene().getWindow(), "/app/game/fxml/Setting.fxml");
     }
 }

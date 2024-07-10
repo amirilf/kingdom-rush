@@ -15,7 +15,7 @@
             <Image url="@../media/bg/home-bg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="716.0" onMouseClicked="#handleSettingButton" pickOnBounds="true" preserveRatio="true" styleClass="setting-btn" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="716.0" onMouseClicked="#handleSettingButton" pickOnBounds="true" preserveRatio="true" styleClass="setting-btn" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
          <image>
             <Image url="@../media/icons/setting.png" />
          </image>
@@ -40,7 +40,7 @@
             <Font name="Dyuthi Regular" size="30.0" />
          </font>
       </Text>
-      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="1066.0" layoutY="686.0" pickOnBounds="true" styleClass="shop-btn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="1066.0" layoutY="686.0" pickOnBounds="true" styleClass="shop-btn" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <image>
             <Image url="@../media/icons/shop.png" />
          </image>

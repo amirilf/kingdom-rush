@@ -7,14 +7,16 @@ public class Player {
     private static int defaultDiamond = 100;
 
     private int id;
+    private String name;
     private String username;
     private String password;
     private int level;
     private int diamond;
     private int backpack; // TODO: int?
 
-    Player(int id, String username, String password, int diamond, int backpack) {
+    public Player(int id, String name, String username, String password, int diamond, int backpack) {
         this.id = IDGenerator++;
+        this.name = name;
         this.username = username;
         this.password = password;
         this.level = 1; // starting level
@@ -25,6 +27,10 @@ public class Player {
     // GETTERS
     public int getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getUsername() {
@@ -48,6 +54,10 @@ public class Player {
     }
 
     // SETTERS
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
