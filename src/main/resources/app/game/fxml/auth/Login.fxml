@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
-            <Image url="@../../media/bg/auth-bg.jpg" />
+            <Image url="@../../media/bg/auth-bg.png" />
          </image>
       </ImageView>
       <Text layoutX="495.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's play!" wrappingWidth="210.0" AnchorPane.topAnchor="200.0">

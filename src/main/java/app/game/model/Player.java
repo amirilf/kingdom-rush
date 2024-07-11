@@ -16,7 +16,7 @@ public class Player {
     private int diamond;
     private Backpack backpack;
 
-    public Player(int id, String name, String username, String password, int diamond, int backpack) {
+    public Player(String name, String username, String password) {
         this.id = IDGenerator++;
         this.name = name;
         this.username = username;

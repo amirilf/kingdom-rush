@@ -1,5 +1,6 @@
 package app.game.gui;
 
+import app.game.model.Database;
 import app.game.model.Player;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 public class HomeController {
 
-    private Player player = new Player(1, "Amir", null, null, 0, 0);
+    private static Player player;
 
     @FXML
     private Text title_name;
@@ -21,8 +22,8 @@ public class HomeController {
 
     @FXML
     private void initialize() {
+        player = Database.getCurrentPlayer();
         title_name.setText(player.getName());
-
     }
 
     @FXML
@@ -33,5 +34,11 @@ public class HomeController {
     @FXML
     private void handleShopButton() {
         Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/Shop.fxml");
+    }
+
+    @FXML
+    private void handleLogoutButton() {
+        Database.logout();
+        Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/auth/Auth.fxml");
     }
 }

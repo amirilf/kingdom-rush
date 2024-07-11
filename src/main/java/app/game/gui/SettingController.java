@@ -1,5 +1,6 @@
 package app.game.gui;
 
+import app.game.model.Database;
 import app.game.model.Player;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ public class SettingController {
     private boolean isMute = true; // TODO: get from the audio module which handles sound
 
     // sample data
-    private Player player = new Player(1, "Amir", "amirilf", "1234", 0, 0);
+    private Player player;
 
     @FXML
     private Text msg;
@@ -38,6 +39,9 @@ public class SettingController {
 
     @FXML
     private void initialize() {
+
+        player = Database.getCurrentPlayer();
+
         if (isMute)
             img_volume.setImage(new Image(getClass().getResource("/app/game/media/icons/volume-off.png").toString()));
 

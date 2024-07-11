@@ -1,6 +1,7 @@
 package app.game.gui.auth;
 
 import app.game.gui.Utility;
+import app.game.model.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -16,7 +17,16 @@ public class Login {
 
     @FXML
     private void handleLoginButton() {
-        System.out.println("Login button clicked!");
+
+        String username = fld_username.getText();
+        String password = fld_password.getText();
+
+        boolean res = Database.login(username, password);
+
+        if (res) {
+            Utility.changeSceneofStage((Stage) fld_username.getScene().getWindow(), "/app/game/fxml/Home.fxml");
+        } else
+            System.out.println("The username or password is incorrect");
     }
 
     @FXML
