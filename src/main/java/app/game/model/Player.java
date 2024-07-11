@@ -1,5 +1,7 @@
 package app.game.model;
 
+import java.util.Arrays;
+
 import app.game.model.spell.Backpack;
 
 public class Player {
@@ -12,7 +14,7 @@ public class Player {
     private String name;
     private String username;
     private String password;
-    private int level;
+    private int level[] = new int[] { 3, 1, 2, 0 };
     private int diamond;
     private Backpack backpack;
 
@@ -21,10 +23,8 @@ public class Player {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.level = 1; // starting level
         this.diamond = defaultDiamond; // starting diamond
         this.backpack = new Backpack();
-
     }
 
     // GETTERS
@@ -44,7 +44,7 @@ public class Player {
         return password;
     }
 
-    public int getLevel() {
+    public int[] getLevel() {
         return level;
     }
 
@@ -69,7 +69,7 @@ public class Player {
         this.password = password;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(int[] level) {
         this.level = level;
     }
 
@@ -79,5 +79,10 @@ public class Player {
 
     public void setBackpack(Backpack backpack) {
         this.backpack = backpack;
+    }
+
+    // OTHER METHODS
+    public int getStars() {
+        return Arrays.stream(level).sum();
     }
 }

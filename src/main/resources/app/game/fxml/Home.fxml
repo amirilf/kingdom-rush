@@ -17,7 +17,7 @@
             <Image url="@../media/bg/home-bg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="716.0" onMouseClicked="#handleSettingButton" pickOnBounds="true" preserveRatio="true" styleClass="setting-btn" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="716.0" onMouseClicked="#handleSettingButton" pickOnBounds="true" preserveRatio="true" styleClass="setting-btn" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
          <image>
             <Image url="@../media/icons/setting.png" />
          </image>
@@ -37,7 +37,7 @@
             <Image url="@../media/icons/shop.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="769.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
+      <ImageView fitWidth="60.0" layoutX="769.0" layoutY="475.0" onMouseClicked="#handleLvl1Button" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
@@ -55,7 +55,7 @@
             <Image url="@../media/icons/line2.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="500.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
+      <ImageView fitWidth="60.0" layoutX="500.0" layoutY="309.0" onMouseClicked="#handleLvl3Button" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
@@ -68,7 +68,7 @@
             <Image url="@../media/icons/line3.png" />
          </image>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="377.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
+      <ImageView fitWidth="60.0" layoutX="377.0" layoutY="224.0" onMouseClicked="#handleLvl4Button" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
@@ -76,7 +76,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitWidth="60.0" layoutX="658.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true" styleClass="flag">
+      <ImageView fitWidth="60.0" layoutX="658.0" layoutY="353.0" onMouseClicked="#handleLvl2Button" pickOnBounds="true" preserveRatio="true" styleClass="flag">
          <image>
             <Image url="@../media/icons/flag.png" />
          </image>
@@ -84,7 +84,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <HBox layoutX="372.0" layoutY="198.0" spacing="5.0">
+      <HBox fx:id="HBoxLvl4" layoutX="372.0" layoutY="198.0" spacing="5.0">
          <children>
             <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -103,7 +103,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox layoutX="495.0" layoutY="282.0" spacing="5.0">
+      <HBox fx:id="HBoxLvl3" layoutX="495.0" layoutY="282.0" spacing="5.0">
          <children>
             <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -122,7 +122,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox layoutX="653.0" layoutY="327.0" spacing="5.0">
+      <HBox fx:id="HBoxLvl2" layoutX="653.0" layoutY="327.0" spacing="5.0">
          <children>
             <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -141,7 +141,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox layoutX="765.0" layoutY="451.0" spacing="5.0">
+      <HBox fx:id="HBoxLvl1" layoutX="765.0" layoutY="451.0" spacing="5.0">
          <children>
             <ImageView fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -165,7 +165,7 @@
             <Image url="@../media/icons/title.png" />
          </image>
       </ImageView>
-      <Text fx:id="title_name" fill="WHITE" layoutX="124.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player name" textAlignment="CENTER" wrappingWidth="230.0">
+      <Text fx:id="txt_name" fill="WHITE" layoutX="124.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player name" textAlignment="CENTER" wrappingWidth="230.0">
          <font>
             <Font name="Dyuthi Regular" size="30.0" />
          </font>
