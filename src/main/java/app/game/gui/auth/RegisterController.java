@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class Register {
+public class RegisterController {
 
     @FXML
     private TextField fld_name;

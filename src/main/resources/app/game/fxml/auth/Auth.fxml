@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../css/auth/Auth.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.auth.Auth">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../css/auth/Auth.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.auth.AuthController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
          <image>

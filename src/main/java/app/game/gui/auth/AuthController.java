@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class Auth {
+public class AuthController {
 
     @FXML
     private Label lbl_login; // only for getting stage
