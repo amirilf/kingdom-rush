@@ -1,0 +1,4 @@
+.back-btn:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}

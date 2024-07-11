@@ -76,6 +76,12 @@ public class HomeController {
     }
 
     @FXML
+    private void handleBuyDiamondButton() {
+        player.setDiamond(player.getDiamond() + 100);
+        lbl_diamonds.setText(String.valueOf(player.getDiamond()));
+    }
+
+    @FXML
     private void handleLogoutButton() {
         Database.logout();
         Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/auth/Auth.fxml");

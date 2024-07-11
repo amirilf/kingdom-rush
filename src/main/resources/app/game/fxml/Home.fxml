@@ -170,7 +170,7 @@
             <Font name="Dyuthi Regular" size="30.0" />
          </font>
       </Text>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="936.0" layoutY="26.0" onMouseClicked="#handleShopButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="936.0" layoutY="26.0" onMouseClicked="#handleBuyDiamondButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../media/icons/add.png" />
          </image>
