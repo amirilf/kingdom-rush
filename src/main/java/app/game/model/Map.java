@@ -2,6 +2,7 @@ package app.game.model;
 
 import java.util.ArrayList;
 
+import app.game.model.tower.Tower;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Path;
 

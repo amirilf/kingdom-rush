@@ -1,6 +1,8 @@
-package app.game.model;
+package app.game.model.tower;
 
-public abstract class Tower {
+import app.game.model.Point;
+
+public abstract class Tower implements TowerInterface {
 
     private int destruction;
     private int construction;
