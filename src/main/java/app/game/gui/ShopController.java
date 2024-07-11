@@ -1,5 +1,7 @@
 package app.game.gui;
 
+import app.game.model.Database;
+import app.game.model.Player;
 import app.game.model.spell.CoinSpell;
 import app.game.model.spell.FreezeSpell;
 import app.game.model.spell.HealthSpell;
@@ -21,6 +23,8 @@ public class ShopController {
             new YoungBoySpell()
     };
     private static int currentSpellIndex = 0;
+
+    private static Player player;
 
     // ========== ELEMENTS
     @FXML
@@ -55,24 +59,22 @@ public class ShopController {
     // TODO : wtf is wrong with health and heart?
     @FXML
     private void initialize() {
+        player = Database.getCurrentPlayer();
 
-        // sample data
-        int coins = 23;
-        int hearts = 234;
-        int freezes = 64;
-        int youngBoys = 2;
-        int diamonds = 76543;
-        lbl_diamond.setText(String.valueOf(diamonds));
-        lbl_coin.setText(String.valueOf(coins));
-        lbl_freeze.setText(String.valueOf(freezes));
-        lbl_heart.setText(String.valueOf(hearts));
-        lbl_youngBoy.setText(String.valueOf(youngBoys));
+        loadData();
+        loadSelectedSpell();
+    }
 
-        setCurrentSpellData();
+    private void loadData() {
+        lbl_diamond.setText(String.valueOf(player.getDiamond()));
+        lbl_coin.setText(String.valueOf(player.getBackpack().getCoinSpells()));
+        lbl_freeze.setText(String.valueOf(player.getBackpack().getFreezeSpells()));
+        lbl_heart.setText(String.valueOf(player.getBackpack().getHealthSpells()));
+        lbl_youngBoy.setText(String.valueOf(player.getBackpack().getYoungBoySpells()));
 
     }
 
-    private void setCurrentSpellData() {
+    private void loadSelectedSpell() {
         lbl_title.setText(currentSpell[currentSpellIndex].getName());
         lbl_price.setText((String.valueOf(currentSpell[currentSpellIndex].getPrice())));
         txt_detail.setText(currentSpell[currentSpellIndex].getDetail());
@@ -87,7 +89,7 @@ public class ShopController {
     private void handleBuyCoin() {
         if (currentSpellIndex != 0) {
             currentSpellIndex = 0;
-            setCurrentSpellData();
+            loadSelectedSpell();
         }
     }
 
@@ -95,7 +97,7 @@ public class ShopController {
     private void handleBuyFreeze() {
         if (currentSpellIndex != 1) {
             currentSpellIndex = 1;
-            setCurrentSpellData();
+            loadSelectedSpell();
         }
     }
 
@@ -103,7 +105,7 @@ public class ShopController {
     private void handleBuyYoungBoy() {
         if (currentSpellIndex != 3) {
             currentSpellIndex = 3;
-            setCurrentSpellData();
+            loadSelectedSpell();
         }
     }
 
@@ -111,12 +113,20 @@ public class ShopController {
     private void handleBuyHeart() {
         if (currentSpellIndex != 2) {
             currentSpellIndex = 2;
-            setCurrentSpellData();
+            loadSelectedSpell();
         }
     }
 
     @FXML
     private void handleBuyButton() {
-        System.out.println("Buying the spell:" + currentSpell[currentSpellIndex].getName());
+        System.out.println("trying to buy the spell:" + currentSpell[currentSpellIndex].getName());
+
+        if (currentSpell[currentSpellIndex].getPrice() <= player.getDiamond()) {
+            player.getBackpack().addSpells(currentSpell[currentSpellIndex]);
+            player.setDiamond(player.getDiamond() - currentSpell[currentSpellIndex].getPrice());
+            loadData();
+        } else {
+            System.out.println("Not enough money!");
+        }
     }
 }

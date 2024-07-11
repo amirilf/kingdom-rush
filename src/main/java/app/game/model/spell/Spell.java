@@ -2,26 +2,27 @@ package app.game.model.spell;
 
 public abstract class Spell implements SpellInterface {
 
-    private String name;
-    private String detail;
-    private int price;
+    private SpellEnum spellObj;
 
-    Spell(int price, String name, String detail) {
-        this.price = price;
-        this.name = name;
-        this.detail = detail;
+    Spell(SpellEnum spellEnum) {
+        this.spellObj = spellEnum;
     }
 
     @Override
     public int getPrice() {
-        return price;
+        return spellObj.getPrice();
     }
 
     public String getName() {
-        return name;
+        return spellObj.getName();
     }
 
     public String getDetail() {
-        return detail;
+        return spellObj.getDetail();
     }
+
+    public int getQuantity() {
+        return spellObj.getQuantity();
+    }
+
 }
