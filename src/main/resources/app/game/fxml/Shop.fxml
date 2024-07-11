@@ -7,13 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.ShopController">
    <children>
-      <ImageView fx:id="lbl_diamond" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../media/bg/shop-bg.png" />
          </image>
@@ -43,7 +44,7 @@
             <Image url="@../media/icons/freeze-shop-buy.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="126.0" layoutY="211.0" spacing="20.0">
+      <VBox alignment="CENTER" layoutX="125.0" layoutY="221.0" spacing="10.0">
          <children>
             <AnchorPane>
                <children>
@@ -52,7 +53,7 @@
                         <Image url="@../media/icons/coin-shop-icon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl_coin" layoutX="10.0" layoutY="55.0" text="23" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                  <Label fx:id="lbl_coin" layoutX="10.0" layoutY="55.0" text="9" textFill="WHITE" AnchorPane.topAnchor="50.0">
                      <font>
                         <Font name="Dyuthi Regular" size="30.0" />
                      </font>
@@ -66,7 +67,7 @@
                         <Image url="@../media/icons/freeze-shop-icon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl_freeze" layoutX="10.0" layoutY="55.0" text="2" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                  <Label fx:id="lbl_freeze" layoutX="10.0" layoutY="55.0" text="9999" textFill="WHITE" AnchorPane.topAnchor="50.0">
                      <font>
                         <Font name="Dyuthi Regular" size="30.0" />
                      </font>
@@ -80,7 +81,7 @@
                         <Image url="@../media/icons/heart-shop-icon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl_heart" layoutX="10.0" layoutY="55.0" text="65" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                  <Label fx:id="lbl_heart" layoutX="10.0" layoutY="55.0" text="99" textFill="WHITE" AnchorPane.topAnchor="50.0">
                      <font>
                         <Font name="Dyuthi Regular" size="30.0" />
                      </font>
@@ -94,7 +95,7 @@
                         <Image url="@../media/icons/young-boy-shop-icon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl_youngBoy" layoutX="10.0" layoutY="55.0" text="554" textFill="WHITE" AnchorPane.topAnchor="50.0">
+                  <Label fx:id="lbl_youngBoy" layoutX="10.0" layoutY="55.0" text="999" textFill="WHITE" AnchorPane.topAnchor="50.0">
                      <font>
                         <Font name="Dyuthi Regular" size="30.0" />
                      </font>
@@ -124,7 +125,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Polygon>
-      <Label layoutX="355.0" layoutY="26.0" prefHeight="70.0" prefWidth="140.0" text="999999" textFill="WHITE">
+      <Label fx:id="lbl_diamond" layoutX="355.0" layoutY="26.0" prefHeight="70.0" prefWidth="140.0" text="999999" textFill="WHITE">
          <font>
             <Font name="Dyuthi Regular" size="40.0" />
          </font>
@@ -148,19 +149,21 @@
             </Text>
          </children>
       </TextFlow>
-      <ImageView fitHeight="77.0" fitWidth="208.0" layoutX="711.0" layoutY="311.0" onMouseClicked="#handleBuyButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="178.0" layoutX="716.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../media/icons/title.png" />
          </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </ImageView>
-      <Text fill="WHITE" layoutX="794.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy">
+      <Text fill="WHITE" layoutX="782.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy">
          <font>
             <Font name="Dyuthi Regular" size="30.0" />
          </font>
       </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="45.0" layoutX="716.0" layoutY="371.0" onMouseClicked="#handleBuyButton" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="178.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
 
    </children>
 </AnchorPane>

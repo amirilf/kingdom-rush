@@ -2,6 +2,7 @@ package app.game.gui;
 
 import app.game.model.Player;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -13,10 +14,10 @@ public class HomeController {
     private Text title_name;
 
     @FXML
-    private Text txt_diamonds;
+    private Label lbl_diamonds;
 
     @FXML
-    private Text txt_stars;
+    private Label lbl_stars;
 
     @FXML
     private void initialize() {
@@ -26,11 +27,11 @@ public class HomeController {
 
     @FXML
     private void handleSettingButton() {
-        Utility.changeSceneofStage((Stage) txt_diamonds.getScene().getWindow(), "/app/game/fxml/Setting.fxml");
+        Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/Setting.fxml");
     }
 
     @FXML
     private void handleShopButton() {
-        Utility.changeSceneofStage((Stage) txt_diamonds.getScene().getWindow(), "/app/game/fxml/Shop.fxml");
+        Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/Shop.fxml");
     }
 }

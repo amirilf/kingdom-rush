@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -30,17 +31,7 @@
             <Image url="@../media/icons/star.png" />
          </image>
       </ImageView>
-      <Text fx:id="txt_diamonds" fill="WHITE" layoutX="853.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23" textAlignment="CENTER" wrappingWidth="80.0" AnchorPane.topAnchor="21.0">
-         <font>
-            <Font name="Dyuthi Regular" size="30.0" />
-         </font>
-      </Text>
-      <Text fx:id="txt_stars" fill="WHITE" layoutX="1071.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22" textAlignment="CENTER" wrappingWidth="80.0" AnchorPane.topAnchor="23.0">
-         <font>
-            <Font name="Dyuthi Regular" size="30.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="1066.0" layoutY="686.0" pickOnBounds="true" styleClass="shop-btn" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="1066.0" layoutY="686.0" onMouseClicked="#handleShopButton" pickOnBounds="true" styleClass="shop-btn" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <image>
             <Image url="@../media/icons/shop.png" />
          </image>
@@ -186,5 +177,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label fx:id="lbl_diamonds" alignment="CENTER" layoutX="848.0" layoutY="21.0" prefHeight="51.0" prefWidth="89.0" text="23" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_stars" alignment="CENTER" layoutX="1049.0" layoutY="22.0" prefHeight="51.0" prefWidth="131.0" text="23" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi Regular" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
