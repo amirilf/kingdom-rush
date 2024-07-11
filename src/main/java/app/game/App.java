@@ -2,7 +2,7 @@ package app.game;
 
 import java.io.IOException;
 
-import app.game.model.DB;
+import app.game.model.Database;
 import app.game.model.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +26,7 @@ public class App extends Application {
 
         // START APPLICATION
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Setting.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Home.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -83,8 +83,8 @@ public class App extends Application {
         path22.getElements().add(new LineTo(550.0, 320.0));
         path22.getElements().add(new LineTo(860.0, 320.0));
 
-        DB.getMaps().get(0).getPaths().add(path11);
-        DB.getMaps().get(0).getPaths().add(path22);
+        Database.getMaps().get(0).getPaths().add(path11);
+        Database.getMaps().get(0).getPaths().add(path22);
 
     }
 
@@ -104,10 +104,10 @@ public class App extends Application {
         Map map3 = new Map(0, 0, imageView3);
         Map map4 = new Map(0, 0, imageView4);
 
-        DB.getMaps().add(map1);
-        DB.getMaps().add(map2);
-        DB.getMaps().add(map3);
-        DB.getMaps().add(map4);
+        Database.getMaps().add(map1);
+        Database.getMaps().add(map2);
+        Database.getMaps().add(map3);
+        Database.getMaps().add(map4);
 
     }
 }

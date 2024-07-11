@@ -2,7 +2,7 @@ package app.game.model;
 
 import java.util.ArrayList;
 
-public class DB {
+public class Database {
 
     // STATIC FIELDS
     private static ArrayList<Map> maps = new ArrayList<>();

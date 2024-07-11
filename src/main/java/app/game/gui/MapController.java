@@ -9,7 +9,7 @@ import javafx.scene.shape.Path;
 
 import java.util.Random;
 
-import app.game.model.DB;
+import app.game.model.Database;
 import app.game.model.Map;
 import app.game.model.Raider;;
 
@@ -24,7 +24,7 @@ public class MapController {
     @FXML
     public void initialize() {
 
-        Map map1 = DB.getMaps().get(0);
+        Map map1 = Database.getMaps().get(0);
         bgImage.setImage(map1.getBg().getImage());
         Path path1 = map1.getPaths().get(0);
         Path path2 = map1.getPaths().get(1);

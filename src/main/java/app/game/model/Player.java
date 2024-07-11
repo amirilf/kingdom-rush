@@ -1,10 +1,12 @@
 package app.game.model;
 
+import app.game.model.spell.Backpack;
+
 public class Player {
 
     // ID generator
     private static int IDGenerator = 1;
-    private static int defaultDiamond = 100;
+    private static int defaultDiamond = 1500;
 
     private int id;
     private String name;
@@ -12,7 +14,7 @@ public class Player {
     private String password;
     private int level;
     private int diamond;
-    private int backpack; // TODO: int?
+    private Backpack backpack;
 
     public Player(int id, String name, String username, String password, int diamond, int backpack) {
         this.id = IDGenerator++;
@@ -21,7 +23,8 @@ public class Player {
         this.password = password;
         this.level = 1; // starting level
         this.diamond = defaultDiamond; // starting diamond
-        this.backpack = backpack; // TODO : ?
+        this.backpack = new Backpack();
+
     }
 
     // GETTERS
@@ -49,7 +52,7 @@ public class Player {
         return diamond;
     }
 
-    public int getBackpack() {
+    public Backpack getBackpack() {
         return backpack;
     }
 
@@ -74,8 +77,7 @@ public class Player {
         this.diamond = diamond;
     }
 
-    public void setBackpack(int backpack) {
+    public void setBackpack(Backpack backpack) {
         this.backpack = backpack;
     }
-
 }
