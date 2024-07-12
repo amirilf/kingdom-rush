@@ -34,7 +34,7 @@ public class App extends Application {
 
             Player player = new Player("Amir", "amirilf", "1234");
             player.setDiamond(player.getDiamond() + 5000);
-            Database.login("amirilf", "1234");
+            Database.signup(player.getName(), player.getUsername(), player.getPassword());
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Map.fxml"));
             Parent root = loader.load();

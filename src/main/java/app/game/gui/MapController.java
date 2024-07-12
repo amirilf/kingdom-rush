@@ -263,6 +263,7 @@ public class MapController {
 
     @FXML
     private void handlePauseButton() {
+        // TODO: reset map values (like coin,health,wave or ...)
         Utility.changeSceneofStage((Stage) root.getScene().getWindow(), "/app/game/fxml/Home.fxml");
     }
 }
