@@ -18,7 +18,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
-import javafx.scene.shape.VLineTo;
+import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -36,7 +36,7 @@ public class App extends Application {
             player.setDiamond(player.getDiamond() + 5000);
             Database.signup(player.getName(), player.getUsername(), player.getPassword());
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/Map.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/game/fxml/auth/Auth.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -57,9 +57,19 @@ public class App extends Application {
         loadMaps();
         loadPaths();
         loadTowerPositions();
+        loadWaves();
     }
 
-    private void loadTowerPositions() {
+    public static void loadWaves() {
+
+        Database.getMaps().forEach(map -> map.getWaves().clear());
+
+        Wave wave11 = new Wave(4, 0, 0, 0);
+        Wave wave12 = new Wave(0, 2, 2, 2);
+        Database.getMaps().get(0).getWaves().addAll(List.of(wave11, wave12));
+    }
+
+    public static void loadTowerPositions() {
 
         // lvl1 tower places
         Point p11 = new Point(587, 302);
@@ -82,43 +92,87 @@ public class App extends Application {
                 new Pair<>(p16, null)));
     }
 
-    private void loadPaths() {
+    public static void loadPaths() {
 
         Path path11 = new Path();
-        path11.setLayoutX(-11.0);
-        path11.setLayoutY(-4.0);
+        path11.setFill(Color.TRANSPARENT);
+        path11.setLayoutX(238.0);
+        path11.setLayoutY(256.0);
         path11.setStroke(Color.BLACK);
-        path11.getElements().add(new MoveTo(280.0, -10.0));
-        path11.getElements().add(new VLineTo(190.0));
-        path11.getElements().add(new LineTo(250.0, 200.0));
-        path11.getElements().add(new LineTo(150.0, 250.0));
-        path11.getElements().add(new LineTo(110.0, 300.0));
-        path11.getElements().add(new LineTo(110.0, 350.0));
-        path11.getElements().add(new LineTo(160.0, 410.0));
-        path11.getElements().add(new LineTo(250.0, 425.0));
-        path11.getElements().add(new LineTo(355.0, 410.0));
-        path11.getElements().add(new LineTo(450.0, 440.0));
-        path11.getElements().add(new LineTo(480.0, 440.0));
-        path11.getElements().add(new LineTo(580.0, 350.0));
-        path11.getElements().add(new LineTo(880.0, 350.0));
+        path11.setStrokeType(StrokeType.INSIDE);
+        path11.getElements().addAll(
+                new MoveTo(970.0, 130.0),
+                new LineTo(600.0, 130.0),
+                new LineTo(600.0, 100.0),
+                new LineTo(580.0, 50.0),
+                new LineTo(520.0, 50.0),
+                new LineTo(470.0, -30.0),
+                new LineTo(220.0, -30.0),
+                new LineTo(180.0, -30.0),
+                new LineTo(120.0, 100.0),
+                new LineTo(100.0, 120.0),
+                new LineTo(-80.0, 120.0));
 
-        Path path22 = new Path();
-        path22.setLayoutX(-1.0);
-        path22.setLayoutY(6.0);
-        path22.setStroke(Color.BLACK);
-        path22.getElements().add(new MoveTo(290.0, -10.0));
-        path22.getElements().add(new VLineTo(190.0));
-        path22.getElements().add(new LineTo(150.0, 250.0));
-        path22.getElements().add(new LineTo(120.0, 300.0));
-        path22.getElements().add(new LineTo(120.0, 350.0));
-        path22.getElements().add(new LineTo(180.0, 400.0));
-        path22.getElements().add(new LineTo(350.0, 380.0));
-        path22.getElements().add(new LineTo(450.0, 410.0));
-        path22.getElements().add(new LineTo(550.0, 320.0));
-        path22.getElements().add(new LineTo(860.0, 320.0));
+        Path path12 = new Path();
+        path12.setFill(Color.TRANSPARENT);
+        path12.setLayoutX(248.0);
+        path12.setLayoutY(285.0);
+        path12.setStroke(Color.BLACK);
+        path12.setStrokeType(StrokeType.INSIDE);
+        path12.getElements().addAll(
+                new MoveTo(970.0, 130.0),
+                new LineTo(600.0, 130.0),
+                new LineTo(600.0, 100.0),
+                new LineTo(580.0, 50.0),
+                new LineTo(520.0, 50.0),
+                new LineTo(470.0, -50.0),
+                new LineTo(220.0, -50.0),
+                new LineTo(180.0, -50.0),
+                new LineTo(120.0, 100.0),
+                new LineTo(100.0, 120.0),
+                new LineTo(-80.0, 120.0));
 
-        Database.getMaps().get(0).getPaths().add(path11);
-        Database.getMaps().get(0).getPaths().add(path22);
+        Path path13 = new Path();
+        path13.setFill(Color.TRANSPARENT);
+        path13.setLayoutX(242.0);
+        path13.setLayoutY(453.0);
+        path13.setScaleY(-1.0);
+        path13.setStroke(Color.BLACK);
+        path13.setStrokeType(StrokeType.INSIDE);
+        path13.getElements().addAll(
+                new MoveTo(970.0, 130.0),
+                new LineTo(600.0, 130.0),
+                new LineTo(600.0, 100.0),
+                new LineTo(580.0, 50.0),
+                new LineTo(520.0, 50.0),
+                new LineTo(470.0, -30.0),
+                new LineTo(220.0, -30.0),
+                new LineTo(180.0, -30.0),
+                new LineTo(120.0, 100.0),
+                new LineTo(100.0, 120.0),
+                new LineTo(-80.0, 120.0));
+
+        Path path14 = new Path();
+        path14.setFill(Color.TRANSPARENT);
+        path14.setLayoutX(250.0);
+        path14.setLayoutY(439.0);
+        path14.setScaleY(-1.0);
+        path14.setStroke(Color.BLACK);
+        path14.setStrokeType(StrokeType.INSIDE);
+        path14.getElements().addAll(
+                new MoveTo(970.0, 130.0),
+                new LineTo(600.0, 130.0),
+                new LineTo(600.0, 100.0),
+                new LineTo(580.0, 50.0),
+                new LineTo(520.0, 50.0),
+                new LineTo(470.0, -10.0),
+                new LineTo(220.0, -20.0),
+                new LineTo(180.0, -20.0),
+                new LineTo(120.0, 100.0),
+                new LineTo(100.0, 120.0),
+                new LineTo(-80.0, 120.0));
+
+        Database.getMaps().get(0).getPaths().addAll(List.of(path11, path12, path13, path14));
 
     }
 

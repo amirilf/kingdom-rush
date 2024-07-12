@@ -5,8 +5,4 @@ public class ThugRaider extends Raider {
     public ThugRaider() {
         super(RaiderEnum.THUG);
     }
-
-    @Override
-    public void move() {
-    }
 }

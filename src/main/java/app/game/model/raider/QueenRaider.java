@@ -6,7 +6,4 @@ public class QueenRaider extends Raider {
         super(RaiderEnum.QUEEN);
     }
 
-    @Override
-    public void move() {
-    }
 }

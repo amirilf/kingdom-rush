@@ -4,10 +4,10 @@ import javafx.scene.image.Image;
 
 public enum RaiderEnum {
 
-    WOLF("Wolf", "path wolf", 100, 100, SpeedEnum.VERY_FAST, 100, 0),
-    QUEEN("Queen", "path queen", 100, 100, SpeedEnum.NORMAL, 100, 20),
-    IMMORTAL("Immortal", "path immortal", 100, 100, SpeedEnum.SLOW, 100, 0),
-    THUG("Thug", "path thug", 100, 100, SpeedEnum.FAST, 100, 0);
+    WOLF("Wolf", "/app/game/media/raiders/wolf/1.png", 50, 300, SpeedEnum.VERY_FAST, 5, 0),
+    QUEEN("Queen", "/app/game/media/raiders/queen/1.png", 50, 1000, SpeedEnum.NORMAL, 102, 20),
+    IMMORTAL("Immortal", "/app/game/media/raiders/immortal/1.png", 200, 1000, SpeedEnum.SLOW, 5, 0),
+    THUG("Thug", "/app/game/media/raiders/thug/1.png", 100, 500, SpeedEnum.FAST, 5, 0);
 
     private String name;
     private Image img;

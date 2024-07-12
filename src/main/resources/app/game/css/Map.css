@@ -1,3 +1,5 @@
+@import url("Style.css");
+
 .context-menu {
     -fx-background-color: linear-gradient(to bottom, #F3D19C, #E7B77A);
     -fx-border-color: #6F5124; 

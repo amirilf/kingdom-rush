@@ -1,6 +1,9 @@
 package app.game.gui;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -11,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Ellipse;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import app.game.App;
 import app.game.model.Database;
 import app.game.model.Point;
 import app.game.model.map.Map;
@@ -29,6 +33,8 @@ public class MapController {
     private static ContextMenu towerContextMenu;
     private static Point lastClickedPoint;
 
+    private static Pane pane;
+
     @FXML
     private AnchorPane root;
 
@@ -45,7 +51,11 @@ public class MapController {
     private Label lbl_health;
 
     @FXML
+    private Button btn_wave;
+
+    @FXML
     public void initialize() {
+        pane = root;
 
         currentMap = Database.getMaps().get(mapIndex);
         bgImage.setImage(currentMap.getBg());
@@ -54,12 +64,29 @@ public class MapController {
         lbl_health.setText(String.valueOf(currentMap.getHealth()));
         lbl_wave.setText(currentMap.getWaveTxt());
 
+        // set listeners
+        setupListeners();
+
         // set ellipses in map
         setupEllipses();
 
         // load contexts once
         createContextMenu();
         createTowerContextMenu();
+    }
+
+    private void setupListeners() {
+        currentMap.coinsProperty().addListener((observable, oldValue, newValue) -> {
+            lbl_coin.setText(String.valueOf(newValue));
+        });
+
+        currentMap.healthProperty().addListener((observable, oldValue, newValue) -> {
+            lbl_health.setText(String.valueOf(newValue));
+        });
+
+        currentMap.waveTxtProperty().addListener((observable, oldValue, newValue) -> {
+            lbl_wave.setText(newValue);
+        });
     }
 
     private void setupEllipses() {
@@ -80,7 +107,6 @@ public class MapController {
     }
 
     private void createContextMenu() {
-
         contextMenu = new ContextMenu();
         contextMenu.getStyleClass().add("context-menu");
 
@@ -106,7 +132,6 @@ public class MapController {
     }
 
     private void createTowerContextMenu() {
-
         towerContextMenu = new ContextMenu();
         towerContextMenu.getStyleClass().add("context-menu");
 
@@ -123,7 +148,6 @@ public class MapController {
     }
 
     private void showContextMenu(Pane root, Ellipse ellipse, double screenX, double screenY) {
-
         // disable items that player can't build according to his coins in the game
         for (MenuItem menuItem : contextMenu.getItems()) {
             if ((int) menuItem.getUserData() > currentMap.getCoins()) {
@@ -144,7 +168,6 @@ public class MapController {
     }
 
     private void showTowerContextMenu(ImageView towerImageView, double screenX, double screenY) {
-
         // save imageView in userdata to user in its items action methods
         towerContextMenu.setUserData(towerImageView);
 
@@ -169,7 +192,6 @@ public class MapController {
     }
 
     private void handleSellTower(ImageView towerImageView) {
-
         TowerEnum tower = (TowerEnum) towerImageView.getUserData();
 
         System.out.println("SELLING => NAME: " + tower.getName() + "  LVL: " + tower.getLvl());
@@ -187,11 +209,9 @@ public class MapController {
 
         // update coin
         currentMap.setCoins(currentMap.getCoins() + tower.getSellPrice());
-        lbl_coin.setText(String.valueOf(currentMap.getCoins()));
     }
 
     private void handleUpgradeTower(ImageView towerImageView) {
-
         TowerEnum tower = (TowerEnum) towerImageView.getUserData();
 
         System.out.println("UPGRADING => NAME: " + tower.getName() + "  LVL: " + tower.getLvl());
@@ -201,7 +221,6 @@ public class MapController {
 
         // update coins
         currentMap.setCoins(currentMap.getCoins() - tower.getNextLevelConstruction());
-        lbl_coin.setText(String.valueOf(currentMap.getCoins()));
 
         // increase tower lvl
         tower.setLvl(tower.getLvl() + 1); // (lvl & coin conditions should be checked in context menu)
@@ -209,7 +228,6 @@ public class MapController {
 
     private void placeTower(TowerEnum towerType) {
         if (lastClickedPoint != null) {
-
             Tower tower;
 
             switch (towerType) {
@@ -227,43 +245,48 @@ public class MapController {
             }
 
             if (tower != null) {
+                ImageView towerImageView = new ImageView(tower.obj().getImg());
+                towerImageView.setUserData(towerType);
 
-                // create image of tower
-                ImageView towerImage = new ImageView(tower.obj().getImg());
-                towerImage.setLayoutX(lastClickedPoint.getX() - tower.obj().getDiffX());
-                towerImage.setLayoutY(lastClickedPoint.getY() - tower.obj().getDiffY());
-                towerImage.getStyleClass().add("img-tower");
-                towerImage.setUserData(tower.obj()); // save tower into the imageView
-                root.getChildren().add(towerImage);
-
-                // update coins
-                currentMap.setCoins(currentMap.getCoins() - tower.obj().getConstruction());
-                lbl_coin.setText(String.valueOf(currentMap.getCoins()));
-
-                towerImage.setOnMouseClicked(event -> {
-                    showTowerContextMenu(towerImage, event.getScreenX(), event.getScreenY());
+                towerImageView.setOnMouseClicked(event -> {
+                    if (towerContextMenu != null && towerContextMenu.isShowing()) {
+                        towerContextMenu.hide();
+                    }
+                    showTowerContextMenu(towerImageView, event.getScreenX(), event.getScreenY());
                 });
 
-                // update pair
-                for (int i = 0; i < currentMap.getTowers().size(); i++) {
-                    Pair<Point, TowerEnum> pair = currentMap.getTowers().get(i);
-                    if (pair.getKey().equals(lastClickedPoint)) {
-                        currentMap.getTowers().set(i, new Pair<>(lastClickedPoint, tower.obj()));
-                        break;
-                    }
-                }
+                towerImageView.setX(lastClickedPoint.getX() - tower.obj().getDiffX());
+                towerImageView.setY(lastClickedPoint.getY() - tower.obj().getDiffY());
 
-            } else {
-                System.out.println("tower is null");
+                root.getChildren().add(towerImageView);
+
+                currentMap.getTowers().add(new Pair<>(lastClickedPoint, towerType));
+
+                currentMap.setCoins(currentMap.getCoins() - tower.obj().getConstruction());
             }
-        } else {
-            System.out.println("point is null");
         }
     }
 
     @FXML
     private void handlePauseButton() {
-        // TODO: reset map values (like coin,health,wave or ...)
-        Utility.changeSceneofStage((Stage) root.getScene().getWindow(), "/app/game/fxml/Home.fxml");
+        System.out.println("OUT");
+    }
+
+    @FXML
+    private void handleWaveButton() {
+        currentMap.getWaves().get(0).start(root, currentMap.getPaths());
+    }
+
+    public static void endGame(String message) {
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game Over");
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
+
+            App.loadWaves();
+            Utility.changeSceneofStage((Stage) pane.getScene().getWindow(), "/app/game/fxml/Home.fxml");
+        });
     }
 }

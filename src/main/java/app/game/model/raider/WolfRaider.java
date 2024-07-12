@@ -6,7 +6,4 @@ public class WolfRaider extends Raider {
         super(RaiderEnum.WOLF);
     }
 
-    @Override
-    public void move() {
-    }
 }
