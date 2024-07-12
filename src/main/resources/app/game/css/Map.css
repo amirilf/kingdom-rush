@@ -1,0 +1,31 @@
+.context-menu {
+    -fx-background-color: linear-gradient(to bottom, #F3D19C, #E7B77A);
+    -fx-border-color: #6F5124; 
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #000000;
+    -fx-font-family: 'Dyuthi Regular';
+}
+
+.context-menu .menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Dyuthi Regular';
+    -fx-cursor: hand;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: linear-gradient(to bottom, #E7B77A, #C08D41);
+    -fx-text-fill: white;
+}
+
+.context-menu .menu-item:pressed {
+    -fx-background-color: #4D371D;
+    -fx-text-fill: white;
+}
+
+.ellipse {
+    -fx-cursor: hand;
+}

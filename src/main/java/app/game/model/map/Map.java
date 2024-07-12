@@ -1,27 +1,29 @@
-package app.game.model;
+package app.game.model.map;
 
 import java.util.ArrayList;
 
+import app.game.model.Point;
 import app.game.model.tower.Tower;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.shape.Path;
+import javafx.util.Pair;
 
 public class Map {
 
-    private ArrayList<Tower> towers = new ArrayList<>();
+    private ArrayList<Pair<Point, Tower>> towers = new ArrayList<>();
     private ArrayList<Path> paths = new ArrayList<>();
     private int waves;
     private int coins;
-    private ImageView bg;
+    private Image bg;
 
-    public Map(int waves, int coins, ImageView bg) {
+    public Map(int waves, int coins, Image bg) {
         this.waves = waves;
         this.coins = coins;
         this.bg = bg;
     }
 
     // GETTERS
-    public ArrayList<Tower> getTowers() {
+    public ArrayList<Pair<Point, Tower>> getTowers() {
         return towers;
     }
 
@@ -37,7 +39,7 @@ public class Map {
         return coins;
     }
 
-    public ImageView getBg() {
+    public Image getBg() {
         return bg;
     }
 

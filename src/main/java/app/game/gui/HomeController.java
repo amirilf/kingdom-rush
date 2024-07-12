@@ -90,20 +90,28 @@ public class HomeController {
     @FXML
     private void handleLvl1Button() {
         System.out.println("LVL 1");
+        MapController.mapIndex = 0;
+        Utility.changeSceneofStage((Stage) txt_name.getScene().getWindow(), "/app/game/fxml/Map.fxml");
     }
 
     @FXML
     private void handleLvl2Button() {
         System.out.println("LVL 2");
+        MapController.mapIndex = 1;
+        Utility.changeSceneofStage((Stage) txt_name.getScene().getWindow(), "/app/game/fxml/Map.fxml");
     }
 
     @FXML
     private void handleLvl3Button() {
         System.out.println("LVL 3");
+        MapController.mapIndex = 2;
+        Utility.changeSceneofStage((Stage) txt_name.getScene().getWindow(), "/app/game/fxml/Map.fxml");
     }
 
     @FXML
     private void handleLvl4Button() {
         System.out.println("LVL 4");
+        MapController.mapIndex = 3;
+        Utility.changeSceneofStage((Stage) txt_name.getScene().getWindow(), "/app/game/fxml/Map.fxml");
     }
 }

@@ -3,6 +3,8 @@ package app.game.model;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import app.game.model.map.Map;
+
 public class Database {
 
     // STATIC FIELDS

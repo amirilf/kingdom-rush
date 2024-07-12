@@ -1,21 +1,23 @@
 package app.game;
 
 import java.io.IOException;
+import java.util.List;
 
 import app.game.model.Database;
-import app.game.model.Map;
+import app.game.model.Point;
+import app.game.model.map.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.VLineTo;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 public class App extends Application {
     @Override
@@ -46,6 +48,30 @@ public class App extends Application {
     private void loadData() {
         loadMaps();
         loadPaths();
+        loadTowerPositions();
+    }
+
+    private void loadTowerPositions() {
+
+        // lvl1 tower places
+        Point p11 = new Point(587, 307);
+        Point p12 = new Point(960, 499);
+        Point p13 = new Point(864, 229);
+        Point p14 = new Point(591, 500);
+        Point p15 = new Point(546, 672);
+        Point p16 = new Point(326, 218);
+
+        Map map1 = Database.getMaps().get(0);
+
+        map1.getTowers().clear();
+
+        map1.getTowers().addAll(List.of(
+                new Pair<>(p11, null),
+                new Pair<>(p12, null),
+                new Pair<>(p13, null),
+                new Pair<>(p14, null),
+                new Pair<>(p15, null),
+                new Pair<>(p16, null)));
     }
 
     private void loadPaths() {
@@ -90,19 +116,15 @@ public class App extends Application {
 
     private void loadMaps() {
 
-        ImageView imageView1 = new ImageView(
-                new Image(getClass().getResource("/app/game/media/map/map1.png").toString()));
-        ImageView imageView2 = new ImageView(
-                new Image(getClass().getResource("/app/game/media/map/map2.png").toString()));
-        ImageView imageView3 = new ImageView(
-                new Image(getClass().getResource("/app/game/media/map/map3.png").toString()));
-        ImageView imageView4 = new ImageView(
-                new Image(getClass().getResource("/app/game/media/map/map4.png").toString()));
+        Image bg1 = new Image(getClass().getResource("/app/game/media/map/map1.png").toString());
+        Image bg2 = new Image(getClass().getResource("/app/game/media/map/map2.png").toString());
+        Image bg3 = new Image(getClass().getResource("/app/game/media/map/map3.png").toString());
+        Image bg4 = new Image(getClass().getResource("/app/game/media/map/map4.png").toString());
 
-        Map map1 = new Map(0, 0, imageView1);
-        Map map2 = new Map(0, 0, imageView2);
-        Map map3 = new Map(0, 0, imageView3);
-        Map map4 = new Map(0, 0, imageView4);
+        Map map1 = new Map(0, 0, bg1);
+        Map map2 = new Map(0, 0, bg2);
+        Map map3 = new Map(0, 0, bg3);
+        Map map4 = new Map(0, 0, bg4);
 
         Database.getMaps().add(map1);
         Database.getMaps().add(map2);
