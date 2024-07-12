@@ -1,6 +1,7 @@
 module app.game {
     requires transitive javafx.graphics;
     requires javafx.controls;
+    requires javafx.media;
     requires javafx.fxml;
 
     opens app.game to javafx.fxml;

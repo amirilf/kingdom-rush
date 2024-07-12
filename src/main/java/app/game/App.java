@@ -7,6 +7,7 @@ import java.util.List;
 import app.game.model.Database;
 import app.game.model.Player;
 import app.game.model.Point;
+import app.game.model.Song;
 import app.game.model.Wave;
 import app.game.model.map.Map;
 import javafx.application.Application;
@@ -31,6 +32,11 @@ public class App extends Application {
 
         // START APPLICATION
         try {
+
+            Song song = new Song("/app/game/media/sound.mp3");
+            Thread songThread = new Thread(song);
+            Song.setMute(true);
+            songThread.start();
 
             Player player = new Player("Amir", "amirilf", "1234");
             player.setDiamond(player.getDiamond() + 5000);

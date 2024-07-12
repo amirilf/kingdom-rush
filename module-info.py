@@ -20,6 +20,7 @@ def generate_module_info(module_name, subpackages):
         f"module {module_name} {{",
         "    requires transitive javafx.graphics;",
         "    requires javafx.controls;",
+        "    requires javafx.media;",
         "    requires javafx.fxml;",
         "",
         f"    opens {module_name} to javafx.fxml;",

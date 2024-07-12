@@ -2,6 +2,7 @@ package app.game.gui;
 
 import app.game.model.Database;
 import app.game.model.Player;
+import app.game.model.Song;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -84,6 +85,7 @@ public class HomeController {
     @FXML
     private void handleLogoutButton() {
         Database.logout();
+        Song.setMute(true);
         Utility.changeSceneofStage((Stage) lbl_diamonds.getScene().getWindow(), "/app/game/fxml/auth/Auth.fxml");
     }
 

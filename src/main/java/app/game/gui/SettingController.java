@@ -2,6 +2,7 @@ package app.game.gui;
 
 import app.game.model.Database;
 import app.game.model.Player;
+import app.game.model.Song;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -14,7 +15,7 @@ import javafx.stage.Stage;
 
 public class SettingController {
 
-    private boolean isMute = true; // TODO: get from the audio module which handles sound
+    private boolean isMute = true;
 
     // sample data
     private Player player;
@@ -42,6 +43,8 @@ public class SettingController {
 
         player = Database.getCurrentPlayer();
 
+        isMute = Song.isMute();
+
         if (isMute)
             img_volume.setImage(new Image(getClass().getResource("/app/game/media/icons/volume-off.png").toString()));
 
@@ -58,12 +61,14 @@ public class SettingController {
 
     @FXML
     private void handleVolumeClicked() {
+
         if (isMute)
             img_volume.setImage(new Image(getClass().getResource("/app/game/media/icons/volume-on.png").toString()));
         else
             img_volume.setImage(new Image(getClass().getResource("/app/game/media/icons/volume-off.png").toString()));
+
         isMute = !isMute;
-        System.out.println("Music status: " + (isMute ? "OFF" : "ON"));
+        Song.setMute(isMute);
     }
 
     @FXML

@@ -2,6 +2,7 @@ package app.game.gui.auth;
 
 import app.game.gui.Utility;
 import app.game.model.Database;
+import app.game.model.Song;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,6 +26,7 @@ public class LoginController {
 
         if (res) {
             Utility.changeSceneofStage((Stage) fld_username.getScene().getWindow(), "/app/game/fxml/Home.fxml");
+            Song.setMute(false);
         } else
             System.out.println("The username or password is incorrect");
     }
