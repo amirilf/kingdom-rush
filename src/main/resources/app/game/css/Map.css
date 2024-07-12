@@ -28,4 +28,10 @@
 
 .ellipse {
     -fx-cursor: hand;
+    -fx-fill: transparent;
+    -fx-border: none;
+}
+
+.img-tower {
+    -fx-cursor: hand;
 }

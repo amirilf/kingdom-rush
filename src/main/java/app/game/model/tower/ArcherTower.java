@@ -2,7 +2,7 @@ package app.game.model.tower;
 
 public class ArcherTower extends Tower {
 
-    ArcherTower() {
+    public ArcherTower() {
         super(TowerEnum.ARCHER);
     }
 

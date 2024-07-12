@@ -2,7 +2,7 @@ package app.game.model.tower;
 
 public class WizardTower extends Tower {
 
-    WizardTower() {
+    public WizardTower() {
         super(TowerEnum.WIZARD);
     }
 

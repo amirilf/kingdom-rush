@@ -1,7 +1,5 @@
 package app.game.model.tower;
 
-import javafx.scene.image.Image;
-
 public abstract class Tower implements TowerInterface {
 
     private TowerEnum towerObj;
@@ -11,15 +9,7 @@ public abstract class Tower implements TowerInterface {
     }
 
     // GETTERS
-    public int getDestruction() {
-        return towerObj.getDestruction();
-    }
-
-    public int getConstruction() {
-        return towerObj.getConstruction();
-    }
-
-    public Image getImg() {
-        return towerObj.getImg();
+    public TowerEnum obj() {
+        return towerObj;
     }
 }

@@ -2,7 +2,7 @@ package app.game.model.tower;
 
 public class ArtilleryTower extends Tower {
 
-    ArtilleryTower() {
+    public ArtilleryTower() {
         super(TowerEnum.ARTILLERY);
     }
 
