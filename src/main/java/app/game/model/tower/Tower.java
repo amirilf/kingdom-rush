@@ -1,42 +1,25 @@
 package app.game.model.tower;
 
-import app.game.model.Point;
+import javafx.scene.image.Image;
 
 public abstract class Tower implements TowerInterface {
 
-    private int destruction;
-    private int construction;
-    private Point position;
+    private TowerEnum towerObj;
 
-    Tower(int destruction, int construction, Point point) {
-        this.destruction = destruction;
-        this.construction = construction;
-        this.position = point;
+    Tower(TowerEnum towerObj) {
+        this.towerObj = towerObj;
     }
 
     // GETTERS
     public int getDestruction() {
-        return destruction;
+        return towerObj.getDestruction();
     }
 
     public int getConstruction() {
-        return construction;
+        return towerObj.getConstruction();
     }
 
-    public Point getPosition() {
-        return position;
-    }
-
-    // SETTERS
-    public void setDestruction(int destruction) {
-        this.destruction = destruction;
-    }
-
-    public void setConstruction(int construction) {
-        this.construction = construction;
-    }
-
-    public void setPosition(Point position) {
-        this.position = position;
+    public Image getImg() {
+        return towerObj.getImg();
     }
 }

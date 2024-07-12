@@ -1,11 +1,9 @@
 package app.game.model.tower;
 
-import app.game.model.Point;
+public class ArtilleryTower extends Tower {
 
-public class BombTower extends Tower {
-
-    BombTower(int destruction, int construction, Point point) {
-        super(destruction, construction, point);
+    ArtilleryTower() {
+        super(TowerEnum.ARTILLERY);
     }
 
     @Override

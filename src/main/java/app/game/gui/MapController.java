@@ -72,17 +72,17 @@ public class MapController {
 
         MenuItem archerTower = new MenuItem("Archer Tower");
         MenuItem wizardTower = new MenuItem("Wizard Tower");
-        MenuItem bombTower = new MenuItem("Bomb Tower");
+        MenuItem artilleryTower = new MenuItem("Artillery Tower");
 
         archerTower.getStyleClass().add("menu-item");
         wizardTower.getStyleClass().add("menu-item");
-        bombTower.getStyleClass().add("menu-item");
+        artilleryTower.getStyleClass().add("menu-item");
 
         archerTower.setOnAction(event -> placeTower("Archer Tower", screenX, screenY));
         wizardTower.setOnAction(event -> placeTower("Wizard Tower", screenX, screenY));
-        bombTower.setOnAction(event -> placeTower("Bomb Tower", screenX, screenY));
+        artilleryTower.setOnAction(event -> placeTower("Artillery Tower", screenX, screenY));
 
-        contextMenu.getItems().addAll(archerTower, wizardTower, bombTower);
+        contextMenu.getItems().addAll(archerTower, wizardTower, artilleryTower);
 
         contextMenu.show(root, screenX, screenY);
 
