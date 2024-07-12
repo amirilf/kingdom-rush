@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 import app.game.App;
 import app.game.model.Database;
+import app.game.model.Player;
 import app.game.model.Point;
 import app.game.model.map.Map;
 import app.game.model.tower.ArcherTower;
@@ -54,6 +55,15 @@ public class MapController {
     private Button btn_wave;
 
     @FXML
+    private Label lbl_spell_coin;
+    @FXML
+    private Label lbl_spell_freeze;
+    @FXML
+    private Label lbl_spell_health;
+    @FXML
+    private Label lbl_spell_youngBoy;
+
+    @FXML
     public void initialize() {
         pane = root;
 
@@ -63,6 +73,13 @@ public class MapController {
         lbl_coin.setText(String.valueOf(currentMap.getCoins()));
         lbl_health.setText(String.valueOf(currentMap.getHealth()));
         lbl_wave.setText(currentMap.getWaveTxt());
+
+        // load spells
+        Player player = Database.getCurrentPlayer();
+        lbl_spell_coin.setText(String.valueOf(player.getBackpack().getCoinSpells()));
+        lbl_spell_freeze.setText(String.valueOf(player.getBackpack().getFreezeSpells()));
+        lbl_spell_health.setText(String.valueOf(player.getBackpack().getHealthSpells()));
+        lbl_spell_youngBoy.setText(String.valueOf(player.getBackpack().getYoungBoySpells()));
 
         // set listeners
         setupListeners();
@@ -269,7 +286,7 @@ public class MapController {
 
     @FXML
     private void handlePauseButton() {
-        System.out.println("OUT");
+        endGame("You lost!");
     }
 
     @FXML

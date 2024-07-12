@@ -5,6 +5,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/Map.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.game.gui.MapController">
@@ -44,5 +46,57 @@
          </font>
       </Label>
       <Button fx:id="btn_wave" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleWaveButton" prefHeight="53.0" prefWidth="250.0" styleClass="submit-btn" text="Start wave" />
+      <HBox layoutX="14.0" layoutY="606.0" prefHeight="160.0" prefWidth="120.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-background-color: #93a4b5;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" rotate="-90.0">
+                     <image>
+                        <Image url="@../media/icons/coin-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/icons/freeze-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" rotate="-90.0">
+                     <image>
+                        <Image url="@../media/icons/heart-shop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/icons/young-boy-shop-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+               <children>
+                  <Label fx:id="lbl_spell_coin" text="23" textFill="#ebebeb">
+                     <font>
+                        <Font name="Dyuthi Regular" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_spell_freeze" text="23" textFill="#ebebeb">
+                     <font>
+                        <Font name="Dyuthi Regular" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_spell_health" text="23" textFill="#ebebeb">
+                     <font>
+                        <Font name="Dyuthi Regular" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_spell_youngBoy" text="23" textFill="#ebebeb">
+                     <font>
+                        <Font name="Dyuthi Regular" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
